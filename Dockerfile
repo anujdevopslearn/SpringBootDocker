@@ -1,4 +1,4 @@
-FROM java:8-jdk-alpine
+FROM java
 
 COPY ./target/demo-docker*.jar /usr/app/dockerDemo.jar
 
