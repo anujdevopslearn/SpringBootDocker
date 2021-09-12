@@ -1,9 +1,9 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/demo-docker-0.0.1-SNAPSHOT.jar /usr/app/
+COPY ./target/demo-docker*.jar /usr/app/dockerDemo.jar
 
 WORKDIR /usr/app
 
-RUN sh -c 'touch demo-docker-0.0.1-SNAPSHOT.jar'
+EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","demo-docker-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","dockerDemo.jar"]
