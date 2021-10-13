@@ -40,7 +40,7 @@ jobs:
         # Required mail server address:
         server_address: smtp.office365.com
         # Required mail server port:
-        server_port: 587
+        server_port: 465
         # Optional (recommended): mail server username:
         username: ${{secrets.MAIL_USERNAME}}
         # Optional (recommended) mail server password:
@@ -52,7 +52,7 @@ jobs:
         # Required sender full name (address can be skipped):
         from: Anuj Sharma <anuj@cloudthat.net>
         # Optional whether this connection use TLS (default is true if server_port is 465)
-        secure: false
+        secure: true
         # Optional plain body:
         body: Build job of ${{github.repository}} completed successfully!
         # Optional HTML body read from file:
