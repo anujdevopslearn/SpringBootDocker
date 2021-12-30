@@ -1,0 +1,28 @@
+---
+- hosts: webservers
+  gather_facts: no
+  remote_user: root
+  become: yes
+  tasks:
+    - name: Install docker and some dependencies
+      apt:
+        name: python3-pip, docker.io
+        state: present
+
+    - name: Start docker service
+      service:
+        name: docker
+        state: started
+
+    - name: Install docker python module
+      pip:
+        name: docker
+
+    - name: Create Application container
+      docker_container:
+        name: docker-pipeline
+        image: anujsharma1990/springbootdocker:latest
+        state: started
+        recreate: yes
+        exposed_ports:
+          - "8080:8080"
