@@ -1,4 +1,4 @@
-FROM java
+FROM openjdk
 
 COPY ./target/demo-docker*.jar /usr/app/dockerDemo.jar
 
