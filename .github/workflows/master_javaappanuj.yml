@@ -12,9 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: anujdevopslearn/GithubActions/.github/workflows/maven-reusable.yml@master
+    uses: anujdevopslearn/GithubActions/.github/workflows/maven-reusable.yml@master
 
   deploy:
     runs-on: ubuntu-latest
