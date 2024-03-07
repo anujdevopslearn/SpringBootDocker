@@ -9,4 +9,4 @@ on:
 jobs:
 
   build:
-    uses: anujdevopslearn/GithubActionsWorkflows/.github/workflows/maven.yml@master
+    uses: anujdevopslearn/GithubActionsWorkflows/.github/workflows/maven.yml@main
