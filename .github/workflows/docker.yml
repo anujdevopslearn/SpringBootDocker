@@ -10,3 +10,5 @@ jobs:
 
   build:
     uses: anujdevopslearn/GithubActionsWorkflows/.github/workflows/maven.yml@main
+    with:
+      build-script: pom.xml
