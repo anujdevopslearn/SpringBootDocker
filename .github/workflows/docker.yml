@@ -15,7 +15,7 @@ jobs:
   docker-build:
     uses: anujdevopslearn/GithubActionsWorkflows/.github/workflows/docker.yml@main
     with:
-      build-script: pom.xml
+      image_name: anuj-image
     secrets: 
         docker_user: ${{ secrets.DOCKER_USERNAME }}
         docker_password: ${{ secrets.DOCKER_PASSWORD }}
