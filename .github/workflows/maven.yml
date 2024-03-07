@@ -1,5 +1,5 @@
-name: Docker Reusable Workflow
-run-name: GitHub Action Docker Reusable Workflow
+name: Maven Reusable Workflow
+run-name: GitHub Action Maven Reusable Workflow
 on:
   workflow_dispatch:
   workflow_call:
