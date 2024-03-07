@@ -13,6 +13,7 @@ jobs:
     with:
       build-script: pom.xml
   docker-build:
+    needs: build
     uses: anujdevopslearn/GithubActionsWorkflows/.github/workflows/docker.yml@main
     with:
       image_name: anuj-image
