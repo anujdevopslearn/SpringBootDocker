@@ -12,3 +12,10 @@ jobs:
     uses: anujdevopslearn/GithubActionsWorkflows/.github/workflows/maven.yml@main
     with:
       build-script: pom.xml
+  docker-build:
+    uses: anujdevopslearn/GithubActionsWorkflows/.github/workflows/docker.yml@main
+    with:
+      build-script: pom.xml
+    secrets: 
+        docker_user: ${{ secrets.DOCKER_USERNAME }}
+        docker_password: ${{ secrets.DOCKER_PASSWORD }}
