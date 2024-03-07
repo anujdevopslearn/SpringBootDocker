@@ -1,0 +1,12 @@
+name: Docker Application CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "master", "develop" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+    uses: ./.github/workflows/maven.yml
