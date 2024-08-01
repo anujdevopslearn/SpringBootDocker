@@ -39,6 +39,7 @@ node {
 	node("kubernetes"){
 		stage("Kubernetes Deploy"){
 	     	   sh """
+	  		alias kubectl="minikube kubectl --"
 			kubectl get pods
    			kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=$dockerHubUser/$containerName:$tag
    		"""
