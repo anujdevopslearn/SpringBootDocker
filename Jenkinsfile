@@ -40,7 +40,7 @@ node {
 		stage("Kubernetes Deploy"){
 	     	   sh """
 			kubectl get pods
-   			kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=$dockerUser/$containerName:$tag
+   			kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=$dockerHubUser/$containerName:$tag
    		"""
 	    }
 	}
