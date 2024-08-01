@@ -36,8 +36,12 @@ node {
 			sh "${sonarscanner}/bin/sonar-scanner"
 		}*/
     }
-	
-	stage("Ansible Deploy"){
-        ansiblePlaybook inventory: 'hosts', playbook: 'deploy.yaml'
-    }
+	node("kubernetes"){
+		stage("Kubernetes Deploy"){
+	     	   sh """
+			kubectl get pods
+   			kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=$dockerUser/$containerName:$tag
+   		"""
+	    }
+	}
 }
