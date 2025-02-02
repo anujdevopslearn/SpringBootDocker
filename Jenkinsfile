@@ -31,13 +31,13 @@ node {
         }
     }
 	
-	stage("SonarQube Scan"){
+   /*stage("SonarQube Scan"){
         withSonarQubeEnv(credentialsId: 'SonarQubeToken') {
 			sh "${sonarscanner}/bin/sonar-scanner"
 		}
     }
-	
-	stage("Ansible Deploy"){
+    */
+    stage("Ansible Deploy"){
         ansiblePlaybook inventory: 'hosts', playbook: 'deploy.yaml'
     }
 }
