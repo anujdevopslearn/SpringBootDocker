@@ -4,7 +4,7 @@ def dockerHubUser="anujsharma1990"
 def gitURL="https://github.com/anujdevopslearn/SpringBootDocker.git"
 
 node {
-	def sonarscanner = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    //def sonarscanner = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     stage('Checkout') {
         checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: gitURL]]]
     }
