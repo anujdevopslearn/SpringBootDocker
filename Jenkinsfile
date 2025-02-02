@@ -36,8 +36,9 @@ node {
 			sh "${sonarscanner}/bin/sonar-scanner"
 		}
     }
-    */
+    
     stage("Ansible Deploy"){
         ansiblePlaybook inventory: 'hosts', playbook: 'deploy.yaml'
     }
+    */
 }
