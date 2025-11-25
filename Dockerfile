@@ -1,4 +1,4 @@
-FROM openjdk
+FROM openjdk:26-ea-17-jdk-oracle
 
 COPY ./target/demo-docker*.jar /usr/app/dockerDemo.jar
 
