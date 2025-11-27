@@ -1,34 +1,58 @@
 name: Docker Image CI
-
+ 
 on:
+
   push:
+
     branches: [ "master" ]
+
   pull_request:
+
     branches: [ "master" ]
-
+ 
 jobs:
-
+ 
   build:
-
+ 
     runs-on: ubuntu-latest
-
+ 
     steps:
+
     - uses: actions/checkout@v4
+
     - name: Maven Build
+
       run: mvn clean install
+
     - name: Build the Docker image
+
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
     - name: 'Build and push image'
+
       uses: rtvu/build-and-push-to-docker-hub-action@v2
+
       with:
+
        tags: latest
+
        image: ${{ secrets.DOCKER_HUB_USERNAME }}/springbootsony
+
        token: ${{ secrets.DOCKER_HUB_TOKEN }}
+
        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+
     - name: ecr-publish
+
       uses: bitovi/github-actions-ecr-publish@v0.1.0
+
       with:
+
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
         aws_default_region: us-east-1
+
         aws_ecr_repo_name: hello-repo
+ 
