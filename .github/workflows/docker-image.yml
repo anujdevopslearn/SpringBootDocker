@@ -32,5 +32,5 @@ jobs:
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws_default_region: us-east-1
         checkout: false
-        aws_ecr_repo_name: '247308769694.dkr.ecr.us-east-1.amazonaws.com/hello-repo'
+        aws_ecr_repo_name: 'hello-repo'
         
