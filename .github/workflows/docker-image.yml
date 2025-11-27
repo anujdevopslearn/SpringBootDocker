@@ -47,5 +47,5 @@ jobs:
       with:
         args: |
           kubectl cluster-info
-          kubectl create deployment hello --image 247308769694.dkr.ecr.us-east-1.amazonaws.com/hello-repo --port 8080
+          kubectl create deployment hello --image=247308769694.dkr.ecr.us-east-1.amazonaws.com/hello-repo
           kubectl get deployments
