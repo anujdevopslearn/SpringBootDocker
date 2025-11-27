@@ -8,12 +8,10 @@ on:
 env:
   AWS_REGION: us-east-1
   EKS_CLUSTER_NAME: EKSCluster
+
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Maven Build
@@ -35,6 +33,9 @@ jobs:
         aws_default_region: us-east-1
         checkout: false
         aws_ecr_repo_name: 'hello-repo'
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
     - name: Deploy
       uses: cancue/eks-action@v0.0.2
       env:
