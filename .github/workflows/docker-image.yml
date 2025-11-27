@@ -22,6 +22,7 @@ jobs:
       uses: rtvu/build-and-push-to-docker-hub-action@v2
       with:
        tags: latest
+       image: springbootsony
        token: ${{ secrets.DOCKER_HUB_TOKEN }}
        username: ${{ secrets.DOCKER_HUB_USERNAME }}
     - name: ecr-publish
