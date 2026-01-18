@@ -38,7 +38,7 @@ node {
 
 			docker run -d \
 			  --name ${containerName} \
-			  -p 8090:8080 $dockerUser/$containerName:$tag
+			  -p 8090:8080 $dockerHubUser/$containerName:$tag
 
 			docker ps
 		"""
