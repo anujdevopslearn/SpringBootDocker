@@ -30,6 +30,20 @@ node {
             echo "Image push complete"
         }
     }
+
+	stage('Deploy Docker Container') {
+		sh """
+			docker stop ${containerName} || true
+			docker rm ${containerName} || true
+
+			docker run -d \
+			  --name ${containerName} \
+			  -p 8080:8080 $dockerUser/$containerName:$tag
+
+			docker ps
+		"""
+	}
+
 	
    /*stage("SonarQube Scan"){
         withSonarQubeEnv(credentialsId: 'SonarQubeToken') {
